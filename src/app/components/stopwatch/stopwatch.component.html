@@ -1,6 +1,23 @@
 <div class="stopwatch">
   <div class="wrapper"></div>  
   <div class="wrapper">
-    <app-button color="white" text="Add"></app-button> 
+    <app-button 
+      color="white" 
+      (btnClick)="start()"
+    >
+      <fa-icon [icon]="faStroopwafel"></fa-icon>
+    </app-button>
+    <app-button 
+      color="white" 
+      (btnClick)="stop()"
+    >
+      <fa-icon [icon]="faStroopwafel"></fa-icon>
+    </app-button> 
+    <app-button 
+      color="white" 
+      (btnClick)="reset()"
+    >  
+      <fa-icon [icon]="faStroopwafel"></fa-icon>
+    </app-button>  
   </div>   
 </div>

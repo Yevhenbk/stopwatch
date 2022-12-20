@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -6,6 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() text: string;
   @Input() color: string;
+  @Output() btnClick: EventEmitter<any> = new EventEmitter();
+
+  onClick(): void {
+    this.btnClick.emit();
+  }
 }
