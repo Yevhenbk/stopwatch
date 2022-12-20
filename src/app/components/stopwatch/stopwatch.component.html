@@ -1,14 +1,15 @@
 <div class="stopwatch">
-  <div class="wrapper"></div>  
+  <div class="wrapper"><p>{{mm}} : {{ss}}</p></div>  
   <div class="button-wrapper">
-    <app-button (btnClick)="start()" text="Start">
-      <fa-icon class="play" [icon]="faPlay"></fa-icon>
-    </app-button>
     <app-button (btnClick)="stop()" text="Wait">
       <fa-icon [icon]="faHand"></fa-icon>
     </app-button> 
+    <app-button (btnClick)="start()" text="Start/Stop">
+        <fa-icon *ngIf="!running" [icon]="faPlay"></fa-icon>
+        <fa-icon *ngIf="running" [icon]="faPause"></fa-icon>
+      </app-button>
     <app-button (btnClick)="reset()" text="Reset">
-      <fa-icon class="rotate" [icon]="faRotateLeft"></fa-icon>
+      <fa-icon [icon]="faRotateLeft"></fa-icon>
     </app-button>  
   </div>   
 </div>
