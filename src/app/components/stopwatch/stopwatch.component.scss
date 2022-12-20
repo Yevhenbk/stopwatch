@@ -1,0 +1,17 @@
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40rem;
+  height: 18rem;
+  border-radius: 15px;
+  background: linear-gradient(to top, #9F63D5, #7254B5);  
+  box-shadow: rgba(17, 12, 46, 0.25) 0px 48px 100px 0px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+}
