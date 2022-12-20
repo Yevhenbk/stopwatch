@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { faStroopwafel, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faRotateLeft, faHand, 
+  IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-stopwatch',
@@ -7,7 +8,10 @@ import { faStroopwafel, IconDefinition } from '@fortawesome/free-solid-svg-icons
   styleUrls: ['./stopwatch.component.scss']
 })
 export class StopwatchComponent {
-  faStroopwafel: IconDefinition = faStroopwafel;
+  faPlay: IconDefinition = faPlay;
+  faPause: IconDefinition = faPause;
+  faRotateLeft: IconDefinition = faRotateLeft;
+  faHand: IconDefinition = faHand;
 
   start(): void {
      return console.log('start')

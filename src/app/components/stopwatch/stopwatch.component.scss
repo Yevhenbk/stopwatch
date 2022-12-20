@@ -6,10 +6,11 @@
   width: 40rem;
   height: 18rem;
 }
-.wrapper {
+.button-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;  
-  gap: 2rem;
+  border-radius: 5px;
+  overflow: hidden;
 }

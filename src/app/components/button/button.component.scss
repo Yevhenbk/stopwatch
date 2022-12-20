@@ -1,12 +1,20 @@
 .btn {
-  width: 5rem;
-  height: 5rem;
+  width: 10rem;
+  height: 3rem;
   border: none;
-  border-radius: 50%;
-  color: #9F63D5;
+  color: white;
+  background-color: #FF6699;
+  font-size: 18px;
+  font-family: 'Space Mono', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 
   &:hover {
     cursor: pointer;
+    background-color: #BD4A70;
   }
 }
 
