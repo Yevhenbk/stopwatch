@@ -1,5 +1,9 @@
 <div class="stopwatch">
-  <div class="wrapper"><p>{{mm}} : {{ss}}</p></div>  
+  <div class="time-wrapper">
+    <h2>{{mm}}</h2>
+    <span>:</span>
+    <h2>{{ss}}</h2>
+  </div>  
   <div class="button-wrapper">
     <app-button (dblclick)="wait()" text="Wait">
       <fa-icon [icon]="faHand"></fa-icon>

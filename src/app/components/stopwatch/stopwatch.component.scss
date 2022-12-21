@@ -6,8 +6,22 @@
   width: 40rem;
   height: 18rem;
 }
-.wrapper {
+.time-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: white;
+  gap: 2rem;
+}
+.time-wrapper h2 {
+  margin: 0;
+  font-size: 78px;
+}
+.time-wrapper span {
+  font-size: 78px;
+  position: relative;
+  top: -5px;
 }
 .button-wrapper {
   display: flex;
