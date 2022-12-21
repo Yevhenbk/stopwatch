@@ -17,7 +17,6 @@ export class StopwatchComponent {
   faHand: IconDefinition = faHand;
   doubleClick$: Observable<Event[]>;
 
-  ms: any = '0' + 0;
   ss: any = '0' + 0;
   mm: any = '0' + 0;
   startTimer: ReturnType<typeof setTimeout>;
@@ -27,21 +26,15 @@ export class StopwatchComponent {
     if(!this.running) {
       this.running = true;
       this.startTimer = setInterval(() => {
-        this.ms++;
-        this.ms = this.ms < 10 ? '0' + this.ms : this.ms;  
-
-        if(this.ms === 100) {
-          this.ss++;
-          this.ss = this.ss < 10 ? '0' + this.ss : this.ss; 
-          this.ms = '0' + 0;
-        }
+        this.ss++;
+        this.ss = this.ss < 10 ? '0' + this.ss : this.ss;  
 
         if(this.ss === 60) {
           this.mm++;
           this.mm = this.mm < 10 ? '0' + this.mm : this.mm; 
           this.ss = '0' + 0;
         }
-      }, 10);
+      }, 1000);
     } else {
       this.stop();
     }
@@ -54,9 +47,9 @@ export class StopwatchComponent {
 
   reset(): void {
     if(this.running) {
-      this.mm = this.ss = this.ms = '0' + 0;
+      this.mm = this.ss = '0' + 0;
     } else {
-      this.mm = this.ss = this.ms = '0' + 0;
+      this.mm = this.ss = '0' + 0;
       this.start();
     }
   }
