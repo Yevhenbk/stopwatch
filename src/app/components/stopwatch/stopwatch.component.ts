@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { faPlay, faPause, faRotateLeft, faHand, 
   IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { map, filter, fromEvent, bufferTime } from 'rxjs';
+import { fromEvent } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-stopwatch',
   templateUrl: './stopwatch.component.html',
   styleUrls: ['./stopwatch.component.scss']
 })
+
 export class StopwatchComponent {
   faPlay: IconDefinition = faPlay;
   faPause: IconDefinition = faPause;
@@ -17,7 +19,7 @@ export class StopwatchComponent {
   ms: any = '0' + 0;
   ss: any = '0' + 0;
   mm: any = '0' + 0;
-  startTimer: any;
+  startTimer: ReturnType<typeof setTimeout>;
   running: boolean = false;
 
   start(): void {
@@ -51,5 +53,17 @@ export class StopwatchComponent {
 
   reset(): void {
     this.mm = this.ss = this.ms = '0' + 0;
+  }
+
+  ngOnInit() {
+    fromEvent(document, 'dblclick')
+    .pipe(debounceTime(500))
+    .subscribe(event => {
+      console.log('Double-click event detected:', event);
+    });
+  }
+
+  wait() {
+    this.start()
   }
 }

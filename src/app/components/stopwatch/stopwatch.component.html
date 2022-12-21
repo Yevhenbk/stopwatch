@@ -1,7 +1,7 @@
 <div class="stopwatch">
   <div class="wrapper"><p>{{mm}} : {{ss}}</p></div>  
   <div class="button-wrapper">
-    <app-button (btnClick)="reset()" text="Wait">
+    <app-button (dblclick)="wait()" text="Wait">
       <fa-icon [icon]="faHand"></fa-icon>
     </app-button> 
     <app-button (btnClick)="start()" text="Start/Stop">
