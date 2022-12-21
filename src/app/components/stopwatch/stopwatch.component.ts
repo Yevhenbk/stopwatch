@@ -61,7 +61,7 @@ export class StopwatchComponent {
     .pipe(bufferTime(500), take(1))
   }
 
-  onDoubleClick(): void {
+  wait(): void {
     this.doubleClick$.subscribe(() => {
       this.start()
     });
