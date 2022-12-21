@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faPlay, faPause, faRotateLeft, faHand, 
   IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { fromEvent } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -15,6 +15,7 @@ export class StopwatchComponent {
   faPause: IconDefinition = faPause;
   faRotateLeft: IconDefinition = faRotateLeft;
   faHand: IconDefinition = faHand;
+  doubleClick$: Observable<Event>;
 
   ms: any = '0' + 0;
   ss: any = '0' + 0;
@@ -55,15 +56,14 @@ export class StopwatchComponent {
     this.mm = this.ss = this.ms = '0' + 0;
   }
 
-  ngOnInit() {
-    fromEvent(document, 'dblclick')
+  ngOnInit(): void {
+    this.doubleClick$ = fromEvent(document, 'dblclick')
     .pipe(debounceTime(500))
-    .subscribe(event => {
-      console.log('Double-click event detected:', event);
-    });
   }
 
-  wait() {
-    this.start()
+  onDoubleClick(): void {
+    this.doubleClick$.subscribe(() => {
+      this.start()
+    });
   }
 }
