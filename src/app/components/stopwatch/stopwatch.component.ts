@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { faPlay, faPause, faRotateLeft, faHand, 
   IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { map, filter, fromEvent, bufferTime } from 'rxjs';
 
 @Component({
   selector: 'app-stopwatch',
@@ -50,7 +51,5 @@ export class StopwatchComponent {
 
   reset(): void {
     this.mm = this.ss = this.ms = '0' + 0;
-    clearInterval(this.startTimer);
-    this.running = false;
   }
 }
