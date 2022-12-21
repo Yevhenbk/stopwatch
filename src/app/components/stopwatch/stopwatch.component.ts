@@ -53,7 +53,13 @@ export class StopwatchComponent {
   }
 
   reset(): void {
-    this.mm = this.ss = this.ms = '0' + 0;
+    if(this.running) {
+      this.mm = this.ss = this.ms = '0' + 0;
+    } else {
+      this.mm = this.ss = this.ms = '0' + 0;
+      this.start()
+    }
+    
   }
 
   ngOnInit(): void {
