@@ -1,27 +1,17 @@
 # Stopwatch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This project represents stopwatch that consisits of three buttons and the counter:
+  - Counter runs when one of the buttons is triggered
+  - Start/Stop button is responisble for running, pausing and resuming the counter once triggered
+  - Teset button - resets counter to zero and resumes it as long as it is not paused
+  - Wait button - getting triggered once double clicked, pauses and resumes the counter
 
-## Development server
+> To start the app run this command inside the project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+ng serve #runs the app in the development mode
+```
 
-## Code scaffolding
+## Project preview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Preview image 1](https://github.com/Yevhenbk/stopwatch/blob/master/src/app/static/img/screen.stopwatch.png)
