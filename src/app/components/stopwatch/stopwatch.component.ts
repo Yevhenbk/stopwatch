@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { faPlay, faPause, faRotateLeft, faHand, 
   IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { fromEvent, Observable } from 'rxjs';
-import { bufferTime, take } from 'rxjs/operators';
+import { bufferTime, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-stopwatch',
@@ -55,13 +55,18 @@ export class StopwatchComponent {
   }
 
   ngOnInit(): void {
-    this.doubleClick$ = fromEvent(document, 'dblclick')
-    .pipe(bufferTime(500), take(1));
-  }
-
-  wait(): void {
-    this.doubleClick$.subscribe(() => {
-      this.start()
-    });
+    const myButton = document.querySelector('#myButton');
+    if (myButton) {
+      this.doubleClick$ = fromEvent(myButton, 'click')
+        .pipe(
+          bufferTime(500), 
+          filter(clicks => clicks.length === 2),
+        )
+    
+        this.doubleClick$.subscribe(() => {
+          this.start(),
+          console.log('dadadsa')
+        })
+    }
   }
 }
