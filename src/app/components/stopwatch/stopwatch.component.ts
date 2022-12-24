@@ -15,11 +15,11 @@ export class StopwatchComponent {
   faPause: IconDefinition = faPause;
   faRotateLeft: IconDefinition = faRotateLeft;
   faHand: IconDefinition = faHand;
-  doubleClick$: Observable<Event[]>;
 
   ss: any = '0' + 0;
   mm: any = '0' + 0;
   startTimer: ReturnType<typeof setTimeout>;
+  doubleClick$: Observable<Event[]>;
   running: boolean = false;
 
   start(): void {
