@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faPlay, faPause, faRotateLeft, faHand, 
   IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { fromEvent, Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { bufferTime, filter } from 'rxjs/operators';
   styleUrls: ['./stopwatch.component.scss']
 })
 
-export class StopwatchComponent {
+export class StopwatchComponent implements OnInit {
   faPlay: IconDefinition = faPlay;
   faPause: IconDefinition = faPause;
   faRotateLeft: IconDefinition = faRotateLeft;
@@ -61,12 +61,11 @@ export class StopwatchComponent {
         .pipe(
           bufferTime(500), 
           filter(clicks => clicks.length === 2),
-        )
+        );
     
-        this.doubleClick$.subscribe(() => {
-          this.start(),
-          console.log('dadadsa')
-        })
+      this.doubleClick$.subscribe(() => {
+        this.start()
+      });
     }
   }
 }
